@@ -18,12 +18,13 @@ function DragAndDropFile({ index, onSuccessfulFileUpload, onSuccessfulFileHash }
 
         setHash(() => algorithmsCtx.comparisons[index])
 
-    }, [algorithmsCtx.comparisons])
+    }, [algorithmsCtx.comparisons, index])
 
     useEffect(() => {
 
         onSuccessfulFileHash(hash);
 
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [hash])
 
     function inputHandler(e) {
