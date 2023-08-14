@@ -40,7 +40,7 @@ function UploadGroup({ children, header }) {
 
         }
 
-    }, [algorithmsCtx.comparisons])
+    }, [algorithmsCtx.comparisons, children, modifiedChildren])
 
     return <>
     {header}

@@ -4,7 +4,6 @@ import AlgorithmsContext from "../store/Algorithms";
 function DragAndDropFile({ index, onSuccessfulFileUpload, onSuccessfulFileHash }) {
 
     const [ hash, setHash ] = useState();
-    const [ fileName, setFileName ] = useState();
     const algorithmsCtx = useContext(AlgorithmsContext);
     const fileInput = useRef();
 
@@ -31,7 +30,6 @@ function DragAndDropFile({ index, onSuccessfulFileUpload, onSuccessfulFileHash }
 
         algorithmsCtx.calculateHash(e.target.files[0], index)
         onSuccessfulFileUpload(e.target.files[0].name);
-        setFileName(() => e.target.files[0].name)
 
     }
 

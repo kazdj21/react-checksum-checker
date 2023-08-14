@@ -70,7 +70,7 @@ function ButtonGroup({ children, text, containerStyle, textStyle, buttonStyle })
         }
 
 
-    }, [children])
+    }, [children, onClickHandler])
 
 
     return <>
