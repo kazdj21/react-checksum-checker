@@ -22,8 +22,13 @@ jobs:
         runs-on: ubuntu-latest
         needs: install
         steps:
+            - name: debugging pwa
+              run: pwd
+            - name: debugging ls -la
+              run: ls -la
             - name: Test code
               run: npm test
+              working-directory: .
     build:
         runs-on: ubuntu-latest
         needs: test
