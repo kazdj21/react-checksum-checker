@@ -15,7 +15,7 @@ function UploadGroup({ children, header }) {
                 const hashValueFromChild = algorithmsCtx.comparisons[children[i].props.dragAndDropComponent.props.index];
                 const nextHashValueFromChild = algorithmsCtx.comparisons[children[i+1].props.dragAndDropComponent.props.index];
     
-                if (hashValueFromChild != undefined && nextHashValueFromChild != undefined) {
+                if (hashValueFromChild !== undefined && nextHashValueFromChild !== undefined) {
     
                     if (hashValueFromChild === nextHashValueFromChild) {
                        

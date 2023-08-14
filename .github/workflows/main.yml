@@ -29,7 +29,7 @@ jobs:
         needs: test
         steps:
             - name: Build from code
-              uses: npm build
+              uses: npm run build
             - name: Upload Artifact
               uses: actions/upload-artifact@v3
               with:
@@ -47,8 +47,8 @@ jobs:
               uses: cloudflare/pages-action@v1
               with:
                 apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-                accountId: account_id
-                projectName: project_name
+                accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+                projectName: guafak-checksum-checker
                 directory: . 
                 githubToken: ${{ secrets.GITHUB_TOKEN }}
                 branch: master
