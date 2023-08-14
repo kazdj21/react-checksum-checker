@@ -22,10 +22,14 @@ jobs:
         runs-on: ubuntu-latest
         needs: install
         steps:
-            - name: debugging pwa
-              run: pwd
-            - name: debugging ls -la
-              run: ls -la
+            - name: Fetch code from repository
+              uses: actions/checkout@v3
+            - name: Install Node
+              uses: actions/setup-node@v3
+              with:
+                node-version: 18
+            - name: Install dependencies
+              run: npm install
             - name: Test code
               run: npm test
               working-directory: .
@@ -33,6 +37,14 @@ jobs:
         runs-on: ubuntu-latest
         needs: test
         steps:
+            - name: Fetch code from repository
+              uses: actions/checkout@v3
+            - name: Install Node
+              uses: actions/setup-node@v3
+              with:
+                node-version: 18
+            - name: Install dependencies
+              run: npm install
             - name: Build from code
               run: npm run build
             - name: Upload Artifact
