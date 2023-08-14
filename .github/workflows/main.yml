@@ -1,0 +1,55 @@
+name: main
+
+on:
+    push:
+        branches:
+            - master
+    workflow_dispatch:
+
+jobs:
+    install:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Fetch code from repository
+              uses: actions/checkout@v3
+            - name: Install Node
+              uses: actions/setup-node@v3
+              with:
+                node-version: 18
+            - name: Install dependencies
+              run: npm install
+    test:
+        runs-on: ubuntu-latest
+        needs: install
+        steps:
+            - name: Test code
+              run: npm test
+    build:
+        runs-on: ubuntu-latest
+        needs: test
+        steps:
+            - name: Build from code
+              uses: npm build
+            - name: Upload Artifact
+              uses: actions/upload-artifact@v3
+              with:
+                name: build-artifact
+                path: ./build
+    deploy:
+        runs-on: ubuntu-latest
+        needs: build
+        steps:
+            - name: Download Artifact
+              uses: actions/download-artifact@v3
+              with:
+                name: build-artifact
+            - name: Publish to Cloudflare Pages
+              uses: cloudflare/pages-action@v1
+              with:
+                apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+                accountId: account_id
+                projectName: project_name
+                directory: . 
+                githubToken: ${{ secrets.GITHUB_TOKEN }}
+                branch: master
+            
