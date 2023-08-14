@@ -69,8 +69,8 @@ function ButtonGroup({ children, text, containerStyle, textStyle, buttonStyle })
 
         }
 
-
-    }, [children, onClickHandler])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [children])
 
 
     return <>

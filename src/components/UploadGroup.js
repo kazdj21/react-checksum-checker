@@ -40,7 +40,8 @@ function UploadGroup({ children, header }) {
 
         }
 
-    }, [algorithmsCtx.comparisons, children, modifiedChildren])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [algorithmsCtx.comparisons])
 
     return <>
     {header}
