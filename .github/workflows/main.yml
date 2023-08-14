@@ -67,6 +67,6 @@ jobs:
                 accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
                 projectName: guafak-checksum-checker
                 directory: . 
-                githubToken: ${{ secrets.GITHUB_TOKEN }}
+                gitHubToken: ${{ secrets.GITHUB_TOKEN }}
                 branch: master
             
