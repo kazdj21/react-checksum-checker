@@ -35,8 +35,8 @@ describe("testing various components on general use cases", () => {
   test('render the button group component', () => {
 
     render(<ButtonGroup text="1. Choose an Algorithm." textStyle={{fontFamily: "Helvetica, sans-serif"}}>
-      <Button algorithm="none">Algorithm 1</Button>
-      <Button algorithm="none">Algorithm 2</Button>
+      <Button algorithm="none-1">Algorithm 1</Button>
+      <Button algorithm="none-2">Algorithm 2</Button>
     </ButtonGroup>);
 
     const buttonGroupElement = screen.getByText(/Algorithm 2/i);
