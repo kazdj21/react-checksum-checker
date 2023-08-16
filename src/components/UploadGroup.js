@@ -9,7 +9,6 @@ function UploadGroup({ children, header }) {
 
     const mediumDevice = useMediaQuery('(max-width: 1100px)');
     const mobileDevice = useMediaQuery('(max-width: 700px)');
-    const mediumDeviceMaxHeight = useMediaQuery('(max-height: 1200px)');
     const mobileDeviceMaxHeight = useMediaQuery('(max-height: 600px)');
 
     useEffect(() => {

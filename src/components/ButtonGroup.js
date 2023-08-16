@@ -7,7 +7,6 @@ function ButtonGroup({ children, text, containerStyle, textStyle, buttonStyle })
     const [ modifiedChildren, setModifiedChildren ] = useState();
     const algorithmsCtx = useContext(AlgorithmsContext);
 
-    const mediumDevice = useMediaQuery('(max-width: 1200px)');
     const mobileDevice = useMediaQuery('(max-width: 600px)');
 
     function onClickHandler(algorithm) {
