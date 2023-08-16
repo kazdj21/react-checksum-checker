@@ -4,6 +4,7 @@ on:
     push:
         branches:
             - master
+            - responsive
     workflow_dispatch:
 
 jobs:
