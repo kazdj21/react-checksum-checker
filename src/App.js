@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       <div>
-        <Header textStyle={{fontSize: "9rem", fontFamily: "Helvetica, sans-serif"}} containerStyle={{marginTop: "1%", marginLeft: "5%"}} >Checksum Checker</Header>
+        <Header textStyle={{fontFamily: "Helvetica, sans-serif"}} containerStyle={{marginTop: "1%", marginLeft: "5%"}} >Checksum Checker</Header>
         <AlgorithmsProvider>
           <ButtonGroup text="1. Choose an Algorithm." textStyle={{fontFamily: "Helvetica, sans-serif"}}>
             <Button algorithm="MD5">MD5</Button>

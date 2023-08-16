@@ -1,10 +1,16 @@
 import { useState, useEffect, useContext, cloneElement, Children } from "react";
 import AlgorithmsContext from "../store/Algorithms";
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 function UploadGroup({ children, header }) {
 
     const algorithmsCtx = useContext(AlgorithmsContext);
     const [ modifiedChildren, setModifiedChildren ] = useState(children);
+
+    const mediumDevice = useMediaQuery('(max-width: 1100px)');
+    const mobileDevice = useMediaQuery('(max-width: 700px)');
+    const mediumDeviceMaxHeight = useMediaQuery('(max-height: 1200px)');
+    const mobileDeviceMaxHeight = useMediaQuery('(max-height: 600px)');
 
     useEffect(() => {
 
@@ -45,7 +51,7 @@ function UploadGroup({ children, header }) {
 
     return <>
     {header}
-    <div style={{display: "flex", flexDirection: "row", justifyContent: "flex-start", marginLeft: "5%"}}>
+    <div style={{display: "flex", flexDirection: mobileDeviceMaxHeight || mobileDevice || mediumDevice ? "column" : "row", justifyContent: "flex-start", marginLeft: "5%"}}>
         {modifiedChildren}
     </div>
     </>
